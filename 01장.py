@@ -12,7 +12,7 @@ if b > maximum: maximum = b
 if c > maximum: maximum = c
 
 print('최댓값은 %d 입니다.' % maximum)
-print('최댓값은 {} 입니다..'.format(maximum))
+print('최댓값은 {} 입니다..'.format (maximum))
 
 
 #print(f'최댓값은 {maximum}입니다.')
@@ -20,6 +20,6 @@ print('최댓값은 {} 입니다..'.format(maximum))
 #    print(f'최댓값은 {maximum}입니다.')
 #                              ^
 #SyntaxError: invalid syntax
-
 #C:\Users\hana1602a\Anaconda3>python --version
 #Python 3.5.3 :: Anaconda 4.2.0 (32-bit)
+# %s : 문자, %d : 정수, %f : 실수
