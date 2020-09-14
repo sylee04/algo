@@ -21,3 +21,5 @@ print('최댓값은 {} 입니다..'.format(maximum))
 #                              ^
 #SyntaxError: invalid syntax
 
+#C:\Users\hana1602a\Anaconda3>python --version
+#Python 3.5.3 :: Anaconda 4.2.0 (32-bit)
