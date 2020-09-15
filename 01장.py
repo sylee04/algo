@@ -183,29 +183,83 @@ if 0 :
     print(sum)
             
     
-#실습 1-10    
-#a부터 b까지 정수의 합 구하기
-print('a부터 b까지 정수의 합 구합니다')    
-a = int(input('정수 a를 입력하세요.:'))
-b = int(input('정수 b를 입력하세요.:'))
-
-if a > b :
-    a, b = b, a
-
-sum = 0
-for i in range(a, b):     
-    print('{} + '.format(i), end='')
-    sum += i
+    #실습 1-10    
+    #a부터 b까지 정수의 합 구하기
+    print('a부터 b까지 정수의 합 구합니다')    
+    a = int(input('정수 a를 입력하세요.:'))
+    b = int(input('정수 b를 입력하세요.:'))
     
-print('{} = '.format(b), end='')
-sum += b
+    if a > b :
+        a, b = b, a
+    
+    sum = 0
+    for i in range(a, b):     
+        print('{} + '.format(i), end='')
+        sum += i
+        
+    print('{} = '.format(b), end='')
+    sum += b
+    
+    print(sum)
 
-print(sum)
+
+    #실습 1-12
+    # +와 -를 번갈아 출력하기
+    print('+와 -를 번갈아 출력하기')
+    n = int(input('몇 개를 출력할까요?:'))
+    
+    for i in range(n):
+        if i % 2 :
+            print('-', end='')
+        else :
+            print('+', end='')
+            
+    print()
+    
+    print('+-'*(n//2), end='')
+    if n%2: print('+', end='')
+    print()
+    
+    for _ in range(n//2):
+        print('+-', end='')
+    if n%2: print('+', end='')
+    print()
+        
+
+#실습 1-14
+#*를 n개 출력하되 w개마다 줄바꿈하기
+
+print('*를 n개 출력하되 w개마다 줄바꿈하기')
+n = int(input('몇 개를 출력할까요?:'))
+w = int(input('몇 개마다 줄바꿈할까요?:'))
+
+for i in range(n):
+    print('*',end='')
+    if i % w == w -1:
+        print()
+if i % w != w - 1:
+    print()
+        
+for _ in range(n // w):
+    print('*' * w)
+print('*' * (n%w))
 
 
 
 
 
 
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
