@@ -351,8 +351,27 @@ def max_of(a):
     for i in range(1, len(a)):
         if a[i] > maximum:
             maximum = a[i]
+    return maximum
             
-            
+print(max_of([1,2,3,4]))            
+
+
+print('배열의 최댓값을 구합니다.')
+print('End를 입력하면 종료합니다')
+number = 0
+x = []
+
+while True:
+    s = input()
+    if s in ['End']: # 멤버십연산자가 느린가요?
+        break
+    x.append(int(s))
+    number += 1
+print('{}개를 입력했습니다.'.format (number))
+print('최댓값은 {}입니다'.format (max_of(x)))
+
+    
+    
 
 
 
