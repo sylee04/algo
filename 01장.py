@@ -70,6 +70,7 @@ if 0 :
     #        break
     #for s in gen:
     #    print(s)
+    #gen2 = (s for s in list('abcd')+list('fghijk'))
 
     # 실습 1C-2
     #세 정수를 입력받아 중앙값 구하기 1
@@ -226,23 +227,122 @@ if 0 :
     print()
         
 
-#실습 1-14
-#*를 n개 출력하되 w개마다 줄바꿈하기
-
-print('*를 n개 출력하되 w개마다 줄바꿈하기')
-n = int(input('몇 개를 출력할까요?:'))
-w = int(input('몇 개마다 줄바꿈할까요?:'))
-
-for i in range(n):
-    print('*',end='')
-    if i % w == w -1:
+    #실습 1-14
+    #*를 n개 출력하되 w개마다 줄바꿈하기
+    
+    print('*를 n개 출력하되 w개마다 줄바꿈하기')
+    n = int(input('몇 개를 출력할까요?:'))
+    w = int(input('몇 개마다 줄바꿈할까요?:'))
+    
+    for i in range(n):
+        print('*',end='')
+        if i % w == w -1:
+            print()
+    if i % w != w - 1:
         print()
-if i % w != w - 1:
-    print()
+            
+    for _ in range(n // w):
+        print('*' * w)
+    print('*' * (n%w))
+
+
+    #실습 1-16
+    #1부터 n까지 정수의 합 구하기(n값은 양수만  입력받음)
+    
+    print('1부터 n까지 정수의 합 구하기')
+    
+    while True:
+        n = int(input('n값을 입력하세요.:'))
+        if n > 0:
+            break
+        else : print('1이상의 정수를 입력하세요')
+    
+    sum = 0
+    i = 1
+    
+    for i in range(n+1):
+        sum += i
+    
+    print(sum)
+
+    #test    
+    a = 3    
+    for _ in range(a):
+        n = int(input('n값을 입력하세요.:'))
+        if n > 0:
+            break
+    else : print('{}회이상 양의 정수를 입력하지 않아서 종료합니다'.format (a))
+
+    # 가로,세로 길이가 정수이고 넓이가 area인 직사각형에서 변의 길이 나열하기
+    area = int(input('직사격형의 넓이를 입력하세요.: '))    
+    for i in range(1, area+1):
+    #    if i*i > area : break
+        if area % i : continue
+        print('{} x {}'.format (i, area//i))
+    
+    # 10~99 사이의 난수 n개 생성하기(13이 나오면 중단)
+    
+    import random
+    n = int(input('난수의 개수를 입력하세요.:'))
+    for _ in range(n):
+        r = random.randint(10,20)
+        print(r, end=' ')
+        if r == 13:
+            break
+    else : print('{}개 출력함'.format (n))
+    
+
+    import random
+    n = int(input('난수의 개수를 입력하세요.:'))
+    for i in range(n):
+        r = random.randint(10,20)
+        print(r, end=' ')
+        if r == 13:
+            print('{}개 출력함'.format (i+1))
+            break
+    else : print('{}개 출력함'.format (n))
+ 
+    
+    no = 12
+    if 10 <= no <= 99:
+        print('accepted')
+    else : print('not accepted')
+    
+    no = 9
+    if not(10 <= no <= 99):
+        print('not accepted')
+    else : print('accepted')
+    
+    
+    # 구구단 곱셈표 출력하기
+    
+    for i in range(2,10):
+        for j in range(1,10):
+            print(i*j, end=' ')
+        print()
         
-for _ in range(n // w):
-    print('*' * w)
-print('*' * (n%w))
+    for i in range(2,10):
+        for j in range(1,10):
+            print('{0:>2d}'.format(i*j), end=' ')
+        print()
+        
+    for i in range(2,10):
+        for j in range(1,10):
+            print('{0:>02d}'.format(i*j), end=' ')
+        print()
+        
+        
+    
+    a, b = map(int,input('곱하기를할 두 수를 입력하세요').split())
+    print('입력한 두수의 곱은 : {}'.format (a*b))    
+        
+        
+    
+print(list(range(10)).reverse())    #??
+print(list(reversed(list(range(10)))))
+print(list(reversed(range(10))))
+[n for n in reversed(range(10))]
+list(range(10))[::-1]
 
 
 
@@ -251,15 +351,17 @@ print('*' * (n%w))
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
