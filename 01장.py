@@ -336,15 +336,23 @@ if 0 :
     a, b = map(int,input('곱하기를할 두 수를 입력하세요').split())
     print('입력한 두수의 곱은 : {}'.format (a*b))    
         
-        
-    
-print(list(range(10)).reverse())    #??
-print(list(reversed(list(range(10)))))
-print(list(reversed(range(10))))
-[n for n in reversed(range(10))]
-list(range(10))[::-1]
 
+#02장
 
+if 0 :
+    print(list(range(10)).reverse())    #??
+    print(list(reversed(list(range(10)))))
+    print(list(reversed(range(10))))
+    [n for n in reversed(range(10))]
+    list(range(10))[::-1]
+
+def max_of(a):
+    maximum = a[0]
+    for i in range(1, len(a)):
+        if a[i] > maximum:
+            maximum = a[i]
+            
+            
 
 
 
