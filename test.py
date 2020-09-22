@@ -51,28 +51,62 @@ if 0:
 
     print('###################################################')
 
-def primeNumber(n): # Prime Numbers : n or less; n이하
-    pl = [2]
-    for i in range(3, n+1):
-        for j in range(2, i):
-            if i % j == 0 :
-                break
-        else : pl.append(i)
-    return pl
-                
-L, R = 6, 10  
-c1 = 0
-binDict = {}
-setbitcount = lambda x : bin(x)[2:].count('1')
-for j in range(L, R+1):
-    binDict[j] = [bin(j), setbitcount(j)]
-    if bin(j)[2:].count('1') in primeNumber(R):
-        c1 += 1
-print('Prime Numbers not more than {} : {}'.format (R, primeNumber(R)))        
-print('Prime Number of Set Bits count is {}'.format (c1))
-for key in sorted(binDict):
-    print('{} -> {} ( {} set bits )'.format (key, binDict[key][0], binDict[key][1]))
-    
+    def primeNumber(n): # Prime Numbers : n or less; n이하
+        pl = [2]
+        for i in range(3, n+1):
+            for j in range(2, i):
+                if i % j == 0 :
+                    break
+            else : pl.append(i)
+        return pl
+                    
+    L, R = 6, 10  
+    c1 = 0
+    binDict = {}
+    setbitcount = lambda x : bin(x)[2:].count('1')
+    for j in range(L, R+1):
+        binDict[j] = [bin(j), setbitcount(j)]
+        if bin(j)[2:].count('1') in primeNumber(R):
+            c1 += 1
+    print('Prime Numbers not more than {} : {}'.format (R, primeNumber(R)))        
+    print('Prime Number of Set Bits count is {}'.format (c1))
+    for key in sorted(binDict):
+        print('{} -> {} ( {} set bits )'.format (key, binDict[key][0], binDict[key][1]))
+
+        
+#https://www.codegrepper.com/code-examples/delphi/how+to+find+all+subarrays+of+an+array+python
+# Python program to print all  
+# sublist from a given list  
+# function to generate all the sub lists
+#“how to find all subarrays of an array python” Code Answer  
+def sub_lists(list1):  #contiguous subarray이다 not 멱집합
+    # store all the sublists  
+    sublist = [[]] 
+    # first loop  
+    for i in range(len(list1) + 1): 
+        # second loop  
+        for j in range(i + 1, len(list1) + 1): 
+            # slice the subarray  
+            sub = list1[i:j] 
+            sublist.append(sub) 
+    return sublist 
+  
+# driver code 
+l1 = [1, 2, 3] #[[], [1], [1, 2], [1, 2, 3], [2], [2, 3], [3]] 그럼 [1,3]은 어디에?
+#l1 = 'abcd' 
+#l1 = [1, 2, 3, 4]
+l1 = [-2,-3,4,-1,-2,1,5,-3]
+print(sub_lists(l1))      
+
+#https://blog.naver.com/kmh03214/221702095617
+#모든 부분집합 구하기(멱집합) - 비트마스킹(Python)|작성자 화닝이
+def powerset(s):
+	masks = [ 1 << i for i in range(len(s)) ]
+	for i in range( 1 << len(s) ):
+		yield [ss for ss,mask in zip(s,masks) if mask & i ]
+
+for power in powerset([1,2,3]):
+    print(power)
 
 
 
