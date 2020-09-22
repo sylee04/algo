@@ -108,7 +108,22 @@ def powerset(s):
 for power in powerset([1,2,3]):
     print(power)
 
-
+#https://stackoverflow.com/questions/22699625/palindromic-prime-number-in-python
+#회문을 상대로 소수인지 판단하므로 시간이 절약
+a = 0
+b = 500
+a += 1
+for i in range(a,b):
+    y = True
+    if(str(i) == str(i)[::-1]):
+        if(i>2):
+            for a in range(2,i):
+                if(i%a==0):
+                    y = False
+                    break
+            if y:
+                print(i, end=' ')
+#3 5 7 11 101 131 151 181 191 313 353 373 383
 
 
 
