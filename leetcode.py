@@ -47,7 +47,7 @@ print('###################################################')
     
 '''53. Maximum Subarray'''
 #https://leetcode.com/problems/maximum-subarray/
-# 주식
+# maximum-subarray algorithms are used on bitmap images to detect the brightest area in an image; 주식
 def sub_lists_sum(list1):  #contiguous subarray이다 not 멱집합
     sublist = [[]] 
     for i in range(len(list1) + 1): 
