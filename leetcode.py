@@ -120,9 +120,69 @@ for i in range(a,b):
             print('{} → prime palindrome is {}'.format (a, i))
             break
 
+print('###################################################') 
+
+#1189. Maximum Number of Balloons
+#text = "nlaebolko"
+#text = "loonbalxballpoon"*5
+#list1 = list(text)
+##ballist = list('balloon')
+#ret = []
+
+#gen1 = (s for s in 'balloon')
+#for s in gen1:
+#    if s in list(text):
+#        ret.append(s)
+#        list1.remove(s)
+#        print(s)
+#        
 
 
+#gen2 = (s for s in list1)
+#for s in gen2:
+#    if s in ballist:
+#        ballist.remove(s)
+#        print(s)   
+#        ret.append(s)
 
+#for _ in range(len(text)//7):
+#    for s in 'balloon':
+#        if s in list(text):
+#            ret.append(s)
+#            list1.remove(s) 
+#
+#print('count of balloon is {}'.format (len(ret)//7))
+#
+#for k,v in enumerate(ret):
+#    if (k+1) % 7:
+#        print(v, end='')
+#    else :
+#        print(v)
+
+print('###################################################') 
+
+#1189. Maximum Number of Balloons
+text = "nlaebolko"
+text = "loonbalxballpoon"*2
+list1 = list(text)
+ret = []
+
+        
+for _ in range(len(text)//7):
+    for s in 'balloon':
+        if s in list1:
+            ret.append(s)
+            list1.remove(s) 
+
+print('count of balloon is {}'.format (len(ret)//7))
+
+for k, v in enumerate(ret):
+    if k%7 == 0:
+        print('%2d' % (k//7+1),v, end='')
+    elif (k+1) % 7:
+        print(v, end='')
+    else :
+        print(v)
 
 
 
